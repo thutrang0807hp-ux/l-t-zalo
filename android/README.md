@@ -1,4 +1,4 @@
-# Nhà Tin Android — bản thử nghiệm 0.1.0
+# Nhà Tin Android — bản thử nghiệm 0.2.0
 
 Ứng dụng Android native Java (Android 8.0/API 26 trở lên). Chạy độc lập trên điện thoại, không cần Node.js, PC, đăng nhập Zalo trong app hay máy chủ. Đây là một bản Android mới; không phải chuyển giao diện web thành APK.
 
@@ -44,4 +44,8 @@ export NHATIN_KEY_PASSWORD
 
 Tạo keystore riêng bằng `keytool -genkeypair` nếu chưa có; giữ lại để ký những bản cập nhật sau. Gói APK thử nghiệm hiện được ký bằng khóa riêng của phiên build, không phải chứng nhận phát hành Play Store. Mất khóa ký thì không thể cập nhật đè app với cùng application ID; có thể phải gỡ app (mất dữ liệu) trước khi cài bản ký khác.
 
-`build-apk.sh` biên dịch tài nguyên/Java/DEX, zipalign, ký APK, xác minh chữ ký và chạy các kiểm tra JVM cho quy tắc tìm kiếm, bỏ thông báo đếm tin và thời hạn lưu. Đầu ra nằm ở `android/build/NhaTin-Android-0.1.0.apk`, không commit file khóa hoặc dữ liệu người dùng.
+`build-apk.sh` biên dịch tài nguyên/Java/DEX, zipalign, ký APK, xác minh chữ ký và chạy các kiểm tra JVM cho quy tắc tìm kiếm, bỏ thông báo đếm tin và thời hạn lưu. Đầu ra nằm ở `android/build/NhaTin-Android-0.2.0.apk`, không commit file khóa hoặc dữ liệu người dùng.
+
+## Giao diện mới 0.2
+
+Xem [`DESIGN.md`](DESIGN.md) và bản web mô phỏng trong `preview/`. APK có bốn mục Hộp tin / Nhóm / Đã lưu / Cài đặt, cùng tông tím và thẻ cuộc trò chuyện. Lưu nhóm giữ toàn bộ tin hiện còn trong kho của nhóm để truy cập nhanh, không kéo dài thời gian lưu tin gốc.

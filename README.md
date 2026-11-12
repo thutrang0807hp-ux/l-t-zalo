@@ -2,7 +2,7 @@
 
 Bản Android native mới nằm trong [`android/`](android/README.md), gom nội dung từ **thông báo Zalo** ngay trên điện thoại. Không cần PC/Node.js hoặc đăng nhập Zalo trong app. Không dùng AI/token, chưa có tổng hợp AI hay gửi Telegram tự động; không đọc toàn bộ lịch sử. Chưa xác minh nhận tin với Zalo trên điện thoại thật.
 
-**[Trang tải APK và hướng dẫn cài](https://nha-tin-tai-ung-dung.guidingpumpkin16.chatgpt.site)** (trang hiện giới hạn người xem theo cấu hình Sites). Đọc giới hạn và cách build trong tài liệu Android trước khi sử dụng. Phần dưới là ứng dụng Node.js/Windows riêng, không phải backend cần có cho APK này.
+**[Web mô phỏng giao diện và tải APK](https://nha-tin-tai-ung-dung.guidingpumpkin16.chatgpt.site)** (trang hiện giới hạn người xem theo cấu hình Sites). Đọc giới hạn và cách build trong tài liệu Android trước khi sử dụng. Phần dưới là ứng dụng Node.js/Windows riêng, không phải backend cần có cho APK này.
 
 ---
 
