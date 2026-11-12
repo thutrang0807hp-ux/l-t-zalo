@@ -28,7 +28,7 @@ export function createApp({
   const store = openStore(resolve(dir)),
     zalo = new ZaloConnections(store, {
       factory: zaloFactory,
-      enabled: env.ZALO_ENABLED === 'true',
+      enabled: store.option('zalo_enabled') === 'true' || env.ZALO_ENABLED === 'true',
       historyCount: Number(env.ZALO_HISTORY_COUNT || 200),
     }),
     aiFile = aiConfigFile(store.dir),
@@ -104,6 +104,15 @@ export function createApp({
       busy: reports.busy,
     }),
   );
+  app.post('/api/zalo/enable', handle(async (req, res) => {
+    if (req.body.acceptRisk !== true)
+      throw Error('Cần xác nhận rủi ro kết nối Zalo không chính thức');
+    store.db.prepare(
+      'INSERT INTO options VALUES(?,?) ON CONFLICT(key) DO UPDATE SET value=excluded.value',
+    ).run('zalo_enabled', 'true');
+    zalo.enabled = true;
+    res.json({ ok: true });
+  }));
   app.post(
     '/api/accounts',
     handle(async (req, res) => {
@@ -163,7 +172,10 @@ export function createApp({
       if (!zalo.enabled)
         throw Error('Chưa bật ZALO_ENABLED. Chạy KET-NOI-ZALO.bat và đọc cảnh báo trước');
       if (!a.enabled) throw Error('Bật tài khoản trước');
-      if (zalo.pending.has(a.id)) throw Error('Đang chờ đăng nhập');
+      if (zalo.pending.has(a.id)) {
+        if (req.body.qr !== true) throw Error('Đang chờ đăng nhập');
+        zalo.disconnect(a.id);
+      }
       if (zalo.live.has(a.id)) zalo.disconnect(a.id);
       void zalo.connect(a.id, req.body.qr === true).catch(() => store.status(a.id, 'login_failed'));
       res.json({ ok: true });

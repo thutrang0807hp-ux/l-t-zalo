@@ -4,7 +4,7 @@ Node.js >=22.13 (khuyến nghị 24 LTS). Chạy `npm ci --ignore-scripts`, tạ
 
 ## Cách dùng
 
-1. Đọc cảnh báo kết nối Zalo không chính thức. Nếu chấp nhận, bật ZALO_ENABLED=true; Windows dùng KET-NOI-ZALO.bat. Khởi động lại app.
+1. Chạy app bằng `npm start` hoặc `CHAY-APP.bat`, mở `http://127.0.0.1:3000`. Trong Quản lý nguồn → Thêm tài khoản → Zalo, đọc cảnh báo rồi tick xác nhận và bấm **Bật kết nối và tạo QR**. Lựa chọn được lưu trên máy và áp dụng ngay, không cần sửa `.env` hay khởi động lại. Cách cũ `ZALO_ENABLED=true` / `KET-NOI-ZALO.bat` vẫn dùng được. Mở riêng file HTML hoặc bản APK/demo offline không chạy được backend đăng nhập thật.
 2. Thêm tài khoản Zalo, quét QR bằng điện thoại và xác nhận đăng nhập. Sau khi kết nối, chọn nhóm từ danh sách. Không nhập ID thủ công.
 3. Sửa yêu cầu riêng từng nhóm, ví dụ: “Lấy mẹo dựng video và tài nguyên; bỏ quảng cáo, chuyện phiếm”. Có thể tạm dừng nhóm hoặc tài khoản.
 4. Đến giờ gửi (mặc định 6h30), app tự đăng nhập lại bằng phiên đã lưu và đọc lịch sử tin của từng nhóm đang theo dõi, nên máy chỉ cần bật lúc đó (mở muộn thì gửi bù). Zalo chỉ trả về khoảng 200 tin mới nhất mỗi nhóm (chỉnh bằng ZALO_HISTORY_COUNT); nhóm nói quá nhiều có thể thiếu tin đầu ngày và bản tin sẽ ghi cảnh báo. Nếu app đang mở trong ngày, tin mới cũng được lưu ngay để bù phần này. Nút "Chọn nhóm đã ghim" chọn nhanh các nhóm đang ghim trên Zalo. Mở Zalo Web ở nơi khác có thể ngắt phiên.
@@ -118,3 +118,7 @@ Bấm Lấy tin hôm qua để kiểm tra. Khi tạo bản tin thủ công hoặ
 ### Lưu kết nối Telegram trong giao diện
 
 Cài đặt → Kết nối Telegram: nhập token từ BotFather và Chat ID cuộc trò chuyện riêng, bấm Lưu kết nối. Token trống giữ token cũ. Cấu hình lưu tại `DATA_DIR/telegram-private.json`, quyền file 0600 trên hệ điều hành hỗ trợ; file nằm trong thư mục data được Git bỏ qua. Không trả token qua API. Bấm Gửi thử để gửi thật bằng cấu hình đã lưu; cần mở bot và bấm Start trước. Khởi động lại app để cấu hình mới áp dụng cho nhận lệnh và lịch gửi. Cấu hình giao diện được ưu tiên hơn TELEGRAM_BOT_TOKEN/TELEGRAM_CHAT_ID trong .env. APK offline vẫn chỉ thử cấu hình mẫu, chưa kết nối backend.
+
+### Kiểm tra luồng đăng nhập sau bản sửa
+
+`npm test` kiểm tra bật kết nối có xác nhận và lưu qua khởi động lại, phục vụ ảnh QR từ SDK, hủy/thay lượt QR đang chờ, giữ trạng thái hết hạn, lưu phiên sau xác nhận và lấy danh sách nhóm bằng SDK giả lập. Đã kiểm tra trình duyệt Chromium: thêm tài khoản → bật kết nối → hiển thị QR → tạo QR mới, không có lỗi JavaScript. Đây chưa phải xác nhận đăng nhập với tài khoản Zalo thật; cần người dùng quét QR trên máy chạy ứng dụng.
