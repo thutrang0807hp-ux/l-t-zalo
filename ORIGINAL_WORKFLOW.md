@@ -21,3 +21,7 @@ Chạy app thật vẫn theo README gốc bằng Node.js, `.env` hoặc Cài đ�
 ## Kiểm tra
 
 Bảy bài test xác minh cấu trúc API bản tin/nguồn/lưu, yêu cầu nhóm/đọc kỹ-đọc lướt, gửi Telegram tách biệt tạo báo cáo, ngày nhận và chống lặp lịch, quét kho local, bỏ qua khóa bí mật và không chuyển API ra mạng. Kiểm tra đối chiếu giữ toàn bộ ID giao diện gốc, không sửa mã backend hoặc mã điều khiển UI gốc. Không có công cụ browser QA Sites được hỗ trợ trong môi trường này, nên bố cục và các tương tác trình duyệt chưa được xác minh bằng browser thực. Các kiểm tra mô phỏng không chứng minh kết nối dịch vụ thật.
+
+## Bố cục xanh dương / navy
+
+Chuyển điều hướng sang sidebar trên máy tính và thanh dưới trên điện thoại. CSS mới gỡ các quy tắc cũ đang ẩn khu bản tin (`#feedPanel` và cột nội dung), giữ đúng trạng thái ẩn của các tab chưa chọn. Khung Telegram, tạo báo cáo, quét, cài đặt AI/bot/lịch vẫn dùng các thành phần gốc. Lớp màu dùng nền trắng/xám, navy cho điều hướng, xanh dương cho thao tác và màu chữ đậm hơn; không thay code gọi API hoặc SDK.

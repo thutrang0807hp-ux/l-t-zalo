@@ -12,7 +12,7 @@ for name in ['mock-api.mjs','demo-bootstrap.mjs']:
 mock=(out/'mock-api.mjs').read_text().replace("'../public/categories.js'", "'./categories.js'")
 (out/'mock-api.mjs').write_text(mock)
 page=(out/'index.html').read_text()
-page=page.replace('<body>','<body><div class="demo-disclosure"><strong>MÔ PHỎNG PHẦN MỀM GỐC</strong><span>Tin, tài khoản, AI và Telegram đều là mẫu. Không nhập khóa thật.</span><button id="demoTick" type="button">Thử lịch gửi</button><button id="demoReset" type="button">Đặt lại mẫu</button></div>')
+page=page.replace('<body>','<body class="demo-mode"><div class="demo-disclosure"><strong>MÔ PHỎNG PHẦN MỀM GỐC</strong><span>Tin, tài khoản, AI và Telegram đều là mẫu. Không nhập khóa thật.</span><button id="demoTick" type="button">Thử lịch gửi</button><button id="demoReset" type="button">Đặt lại mẫu</button></div>')
 page=page.replace('<div id="notice" role="status"></div>','<div id="notice" role="status"></div><section class="demo-flow-log"><strong>Nhật ký luồng mẫu · Zalo → AI → Telegram</strong><ol id="demoEvents"></ol></section>')
 page=page.replace('<script type="module" src="/app.js"></script>','<script type="module" src="/demo-bootstrap.mjs"></script>')
 page=page.replace('<title>Nhà Tin</title>','<title>Nhà Tin — Mô phỏng đúng luồng gốc</title>')
