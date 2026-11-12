@@ -1,0 +1,130 @@
+[
+  {
+    "path": "README.md",
+    "sha256": "aa257c985312e2d6027a364d49936c889b5ec2479e02c80cefc6cc7a679d3346"
+  },
+  {
+    "path": "core.js",
+    "sha256": "a0479f9c3f6f77d01b115b81e025dd0fa541f4675e903b1bd5cb2e259fe4bc4b"
+  },
+  {
+    "path": "package.json",
+    "sha256": "17e85da541e353e9f428f5c031ecdca9d85536ac5c0cd7c24a507953828b5d50"
+  },
+  {
+    "path": "HUONG-DAN-WINDOWS.txt",
+    "sha256": "838c85c6ba0191667294640a591b348b7b7d2921b292cf71215dde584924101f"
+  },
+  {
+    "path": "KET-NOI-ZALO.bat",
+    "sha256": "f58150f36274e2917b8b53fd3158c7a8a6b35c464030bbb0f46629a99c935759"
+  },
+  {
+    "path": "server.js",
+    "sha256": "779fb18daa917f48e1f4e9703105961e2710696ae4fe10cec4c82e890496cf03"
+  },
+  {
+    "path": "CAU-HINH.bat",
+    "sha256": "b8a885752f6c77c659a9d13e6c252933ef6739a0443c1627e7e6fb14bcd11e8f"
+  },
+  {
+    "path": ".env.example",
+    "sha256": "41f3f159cba461f5316e8f950ca0809d48432a60af287a89fc037b21b3522f8a"
+  },
+  {
+    "path": ".gitignore",
+    "sha256": "471f02de03dacec278367eb94d85f1ee050c63f2a94966f328097fe78b88b43d"
+  },
+  {
+    "path": "CHAY-APP.bat",
+    "sha256": "15c151b2cff133f25fcbd14d961274e6ea04cb6590cf6cde68357cf1db8b28ce"
+  },
+  {
+    "path": "HANDOFF.md",
+    "sha256": "3effdf44f1858db5d309ff86b07becff66476e72bf2ba2f99a3b2630fd6a839c"
+  },
+  {
+    "path": "package-lock.json",
+    "sha256": "9eb50ee82456afc4d7f496d06997c4ca1cb30216fefc211eddb08519d2c82ab8"
+  },
+  {
+    "path": "public/app.js",
+    "sha256": "2411222679e43ec91b3c88e1a48bb228fd6ad8094017c86ae80ff7410597e2fc"
+  },
+  {
+    "path": "public/calendar.js",
+    "sha256": "3c2667562bdae23a44e017fb348789ba839cb54843f070497074655b5b927315"
+  },
+  {
+    "path": "public/categories.js",
+    "sha256": "4d7cd9c999e4f934057744dff194b48c2446cf0be2e7714d0178c8b5b107ce9e"
+  },
+  {
+    "path": "public/index.html",
+    "sha256": "7520b93c60fd92aedf780a5a5e9b87631745f922ced086a4b458c152794bed0d"
+  },
+  {
+    "path": "public/style.css",
+    "sha256": "122f5bbda06e28e1a0f6c1048ccd5e5c7387b72a6c377a3f3651c9f980d8d47f"
+  },
+  {
+    "path": "public/calendar.css",
+    "sha256": "121d532d3112ee6bd6b0b99e04d232da034c85009fa9638bf2feae7131af1eef"
+  },
+  {
+    "path": "lib/noise.js",
+    "sha256": "a747ef82ae1e74961cddc753140b204d5e45449286b42394ecf3bd639644a62c"
+  },
+  {
+    "path": "lib/discord.js",
+    "sha256": "739bde15c8c5ab7ac09f165f3c2dd576c59c1113cdd31c8ceb7bed630af7c63d"
+  },
+  {
+    "path": "lib/scans.js",
+    "sha256": "3d9bf99a55164736f58908a46ba8906d28775b44b870418da2d8045f3740ec7c"
+  },
+  {
+    "path": "lib/telegram.js",
+    "sha256": "08ac5cd49ce02445c063a5e504b03d4fc9a4b8affd82eb22b69a2c5fa2d5f6e8"
+  },
+  {
+    "path": "lib/reading.js",
+    "sha256": "d4e6fff42faf34af6d416bb729217e52a322505add5e117520779440660e5f92"
+  },
+  {
+    "path": "lib/ai-config.js",
+    "sha256": "484cbf29675f230777f6e6640fe83efb4511b6275595fe4b62da30525ba351a7"
+  },
+  {
+    "path": "lib/categories.js",
+    "sha256": "4d7cd9c999e4f934057744dff194b48c2446cf0be2e7714d0178c8b5b107ce9e"
+  },
+  {
+    "path": "lib/reports.js",
+    "sha256": "87080ea0fc37fe77b9a3030df4f3033ed892823c225aa904607627e292961e00"
+  },
+  {
+    "path": "lib/store.js",
+    "sha256": "577fdbe6e818d7b82460a5a7a7c903c5a7c7c945f7ce57c47835560fd5349c6f"
+  },
+  {
+    "path": "lib/schedule.js",
+    "sha256": "1e3a68c650787cbd8f1e5a50b8695f90ea0be66e8b61e13c4252bb58592a334b"
+  },
+  {
+    "path": "lib/highlights.js",
+    "sha256": "5060b5d2bcdc38bc7bc9fc55f92bdc21c9c84cb1076f0dd82bf65f94ecb5797c"
+  },
+  {
+    "path": "lib/conversations.js",
+    "sha256": "a7b3aeb23e3f498efae40e86b596ed2f6c3e180053ad681bde322c9fa02bd4c0"
+  },
+  {
+    "path": "lib/zalo.js",
+    "sha256": "af7e52e1868791b945b86ebe937c39cfcbed6dca32cfc37498320c887a82fc9b"
+  },
+  {
+    "path": "lib/telegram-config.js",
+    "sha256": "041109597fcad44a82481a40c9bcb8826185736174439e3bbcbedad51ae2414c"
+  }
+]

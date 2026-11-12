@@ -1,0 +1,46 @@
+NHÀ TIN — HƯỚNG DẪN TRÊN WINDOWS
+
+BẮT ĐẦU
+1. Giải nén toàn bộ ZIP vào một thư mục riêng, ví dụ Documents\NhaTin.
+   Không chạy ngay bên trong ZIP.
+2. Bấm đúp CHAY-APP.bat. Bản này có sẵn Node.js và thư viện,
+   không cần cài thêm. Trình duyệt tự mở app.
+   Windows có thể hỏi "Windows protected your PC": bấm More info → Run anyway.
+3. Giữ cửa sổ đen mở; đóng cửa sổ là app dừng.
+
+KẾT NỐI AI (GEMINI MIỄN PHÍ)
+- Lấy khóa ở https://aistudio.google.com/apikey
+- Trong app: Cài đặt → AI tóm tắt → chọn Google Gemini → dán khóa,
+  nhập tên model (ví dụ gemini-2.5-flash-lite) → Lưu AI → Kiểm tra AI.
+
+KẾT NỐI TELEGRAM (NƠI NHẬN BẢN TIN)
+- Tạo bot qua @BotFather, mở bot và bấm Start.
+- Trong app: Cài đặt → Kết nối Telegram → nhập Bot token và Chat ID → Lưu → Gửi thử.
+
+ZALO
+- Kết nối không chính thức, có thể bị khóa nick. Nên dùng nick phụ.
+- Đóng app, chạy KET-NOI-ZALO.bat, chọn Y. Mở lại CHAY-APP.bat.
+- Quản lý nguồn → Kết nối Zalo → quét QR bằng điện thoại.
+- "+ Chọn nhóm theo dõi" → có thể bấm "Chọn nhóm đã ghim" → Lưu.
+- Nút Sửa ở từng nhóm: chọn 🔍 Đọc kỹ (nhóm công việc)
+  hoặc ⚡ Đọc lướt (nhóm sở thích, rẻ hơn).
+- Mở Zalo Web ở nơi khác có thể ngắt kết nối app.
+
+DISCORD (KHÔNG BẮT BUỘC)
+- Tải DiscordChatExporter bản CLI: https://github.com/Tyrrrz/DiscordChatExporter
+- Chạy CAU-HINH.bat, điền DISCORD_EXPORTER_PATH và DISCORD_TOKEN, lưu, mở lại app.
+- Thêm tài khoản Discord → "+ Chọn kênh theo dõi" → tải server → tick kênh.
+- Dùng token cá nhân trái điều khoản Discord; nên dùng tài khoản phụ.
+
+LỊCH GỬI
+- Mặc định 6h30 giờ Việt Nam: app đọc tin các nhóm của ngày hôm trước,
+  AI tóm tắt rồi gửi vào Telegram.
+- Máy chỉ cần bật và mở app lúc đó. Mở muộn thì app gửi bù.
+- Trần chi phí AI $5/tháng (gói Gemini miễn phí thì $0).
+
+GẶP LỖI
+- Cổng 3000 đã dùng: đóng cửa sổ app cũ trước.
+- Không thấy QR: đợi vài giây, kiểm tra Internet.
+- Bấm Kiểm tra AI báo lỗi: đọc câu lỗi (sai khóa / sai tên model / hết lượt).
+- Không gửi .env, thư mục data, mã QR hoặc khóa cho người khác.
+- Các file .bat chưa được chạy thử trên máy Windows thật.
