@@ -5,3 +5,7 @@ data/
 *-private.json
 *.session.json
 *.sqlite*
+android/build/
+*.jks
+*.keystore
+local.properties
