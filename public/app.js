@@ -41,6 +41,7 @@ async function act(fn) {
     await fn();
   } catch (e) {
     $('#notice').textContent = e.message;
+    if ($('#connectDialog').open) $('#qrStatus').textContent = e.message;
   }
 }
 const statusLabel = {
@@ -51,6 +52,7 @@ const statusLabel = {
   qr_scanned: 'Đã quét, chờ xác nhận',
   qr_expired: 'QR hết hạn — tạo lại',
   qr_declined: 'Đăng nhập bị từ chối',
+  qr_write_failed: 'Không lưu được QR — kiểm tra quyền thư mục dữ liệu',
   login_failed: 'Đăng nhập thất bại — thử QR mới',
   replaced: 'Zalo đang mở ở nơi khác — bấm kết nối lại',
   listening: 'Đang mở kết nối nhận tin',
@@ -133,7 +135,7 @@ function renderAccounts() {
         act(async () => {
           activeId = a.id;
           $('#connectDialog').showModal();
-          if (
+          if (state.zaloEnabled &&
             !['qr_pending', 'qr_scanned', 'connecting', 'restoring', 'listening'].includes(a.status)
           )
             await request('/api/accounts/' + a.id + '/connect', { qr: false });
@@ -447,7 +449,12 @@ async function refresh() {
   }
   if ($('#connectDialog').open) {
     const a = state.accounts.find((a) => a.id === activeId);
-    $('#qrStatus').textContent = statusLabel[a?.status] || 'Chưa kết nối';
+    $('#zaloEnablePanel').hidden = state.zaloEnabled;
+    $('#freshQR').hidden = !state.zaloEnabled;
+    $('#freshQR').disabled = ['connecting', 'restoring', 'listening'].includes(a?.status);
+    $('#qrStatus').textContent = state.zaloEnabled
+      ? statusLabel[a?.status] || 'Chưa kết nối'
+      : 'Kết nối Zalo chưa được bật. Xác nhận bên trên để đăng nhập thật.';
     if (a?.status === 'connected') {
       const accountId = activeId;
       $('#connectDialog').close();
@@ -524,10 +531,22 @@ $('#accountForm').onsubmit = (e) => {
       return;
     }
     $('#connectDialog').showModal();
-    await request('/api/accounts/' + a.id + '/connect', { qr: true });
+    if (state.zaloEnabled) await request('/api/accounts/' + a.id + '/connect', { qr: true });
     await refresh();
   });
 };
+$('#enableZalo').onclick = () => act(async () => {
+  if (!$('#acceptZaloRisk').checked) throw Error('Hãy đọc và xác nhận rủi ro trước khi kết nối');
+  const button = $('#enableZalo');
+  button.disabled = true;
+  try {
+    await request('/api/zalo/enable', { acceptRisk: true });
+    await request('/api/accounts/' + activeId + '/connect', { qr: true });
+    await refresh();
+  } finally {
+    button.disabled = false;
+  }
+});
 $('#freshQR').onclick = () =>
   act(async () => {
     await request('/api/accounts/' + activeId + '/connect', { qr: true });
