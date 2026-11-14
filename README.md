@@ -118,3 +118,7 @@ Bấm Lấy tin hôm qua để kiểm tra. Khi tạo bản tin thủ công hoặ
 ### Lưu kết nối Telegram trong giao diện
 
 Cài đặt → Kết nối Telegram: nhập token từ BotFather và Chat ID cuộc trò chuyện riêng, bấm Lưu kết nối. Token trống giữ token cũ. Cấu hình lưu tại `DATA_DIR/telegram-private.json`, quyền file 0600 trên hệ điều hành hỗ trợ; file nằm trong thư mục data được Git bỏ qua. Không trả token qua API. Bấm Gửi thử để gửi thật bằng cấu hình đã lưu; cần mở bot và bấm Start trước. Khởi động lại app để cấu hình mới áp dụng cho nhận lệnh và lịch gửi. Cấu hình giao diện được ưu tiên hơn TELEGRAM_BOT_TOKEN/TELEGRAM_CHAT_ID trong .env. APK offline vẫn chỉ thử cấu hình mẫu, chưa kết nối backend.
+
+## Ý tưởng phát triển tiếp
+
+[Xem ý tưởng ứng dụng Android vừa nhận, vừa nhắn, vừa gom tin](ideas/zalo-work-client-android.md). Đây là hướng nghiên cứu mới, chưa phải chức năng đã có hoặc APK đã chạy được.
