@@ -1,3 +1,5 @@
+> **Bản gom bàn giao — tạm dừng hướng APK.** Xem [HANDOFF-2026-11-15.md](HANDOFF-2026-11-15.md) để biết mã gốc, bản thử nghiệm đã rút, các giới hạn và vị trí file ZIP. Không có APK đầy đủ đã được kiểm chứng chạy độc lập trên điện thoại.
+
 # Nhà Tin — ứng dụng Zalo → AI → Telegram
 
 Node.js >=22.13 (khuyến nghị 24 LTS). Chạy `npm ci --ignore-scripts`, tạo `.env` từ `.env.example`, rồi `npm start`. App chỉ lắng nghe máy hiện tại trên cổng 3000. Trên Windows: giải nén và dùng CHAY-APP.bat. Không chạy trong ZIP.

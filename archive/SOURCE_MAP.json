@@ -1,0 +1,27 @@
+{
+  "date": "2026-11-15",
+  "timezone": "Asia/Bangkok",
+  "repository": "https://github.com/thutrang0807hp-ux/l-t-zalo",
+  "snapshot_branch": "archive/nhatin-handoff-2026-11-15",
+  "source_commits": {
+    "origin/main": "cf34c5e3ed3c26f200ed7f65b6e1e4bdb6312bd4",
+    "origin/fix/real-zalo-login": "33a3714d979fee460a31be3c600ce2b88fd6609b",
+    "origin/feat/android-notification-inbox": "3988eb8958df23e1587352e6ebf0ebc78d5565d1",
+    "origin/fix/restore-original-workflow-ui": "b196d189943f9c6f390d54cc42cb93c22d850823"
+  },
+  "pull_requests": {
+    "qr_fix": 1,
+    "withdrawn_android": 2,
+    "original_workflow_ui": 3
+  },
+  "windows_page_site_commit": "392abaed8f4a423af9a02241fb8f6efd4c55ef65",
+  "hosted_preview_site_commit": "a6a1909eecce4930f0acc32a45f594650bee4a64",
+  "excluded": [
+    "real credentials",
+    "chat data",
+    "signing private keys",
+    "SDK/JDK caches",
+    "node_modules",
+    "unsigned intermediates"
+  ]
+}
